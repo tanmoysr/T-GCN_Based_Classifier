@@ -40,3 +40,25 @@ For configuration
 ```bash
 --model_name TGCN --data flu_13_14 --batch_size 64 --hidden_dim 64 --max_epochs 300 --learning_rate 0.001 --seq_len 5 --pre_len 1 --lead_time 0 --num_class 5 --split_ratio 0.5
 ```
+
+## Model Training to Compare with DETECTIVE
+For the sake of fairness, when comparing with DETECTIVE, we followed the following steps:
+- First replace the [main](main.py) and [supervised_linearClassification](tasks/supervised_linearClassification.py) file with [main](DETECTIVE_Comparison/main.py) and [supervised_linearClassification](DETECTIVE_Comparison/supervised_linearClassification.py). 
+-For configuration:
+    - Civil Unrest
+```bash
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data argentina --adjust_feat 1249 --lead_time 0 --num_class 3 --split_ratio 0.5
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data brazil --adjust_feat 1288 --lead_time 0 --num_class 3 --split_ratio 0.5
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data chile --adjust_feat 1214 --lead_time 0 --num_class 3 --split_ratio 0.5
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data colombia --adjust_feat 1230 --lead_time 0 --num_class 3 --split_ratio 0.5
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data mexico --adjust_feat 1262 --lead_time 0 --num_class 3 --split_ratio 0.5
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data paraguay --adjust_feat 1105 --lead_time 0 --num_class 3 --split_ratio 0.5
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data uruguay --adjust_feat 1149 --lead_time 0 --num_class 3 --split_ratio 0.5
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data venezuela --adjust_feat 1251 --lead_time 0 --num_class 3 --split_ratio 0.5
+
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data china_air --adjust_feat 1343 --lead_time 0 --num_class 4 --split_ratio 0.5
+
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data flu_11_12 --adjust_feat 524 --lead_time 0 --num_class 5 --split_ratio 0.5
+--model_name TGCN  --batch_size 64 --hidden_dim 64 --max_epochs 480 --learning_rate 0.01 --seq_len 1 --pre_len 1 --data flu_13_14 --adjust_feat 524 --lead_time 0 --num_class 5 --split_ratio 0.5
+
+```
